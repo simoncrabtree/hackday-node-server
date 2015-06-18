@@ -1,4 +1,5 @@
 var Hapi = require('hapi');
+var config = require('./package.json');
 
 var server = new Hapi.Server();
 server.connection({ port: process.env.port });
@@ -8,5 +9,8 @@ server.start(function () {
 });
 
 server.route({method: 'GET', path: '/info', handler: function (request, reply) {
-	reply({version: '0.0.1'});
+	reply({
+		name: config.name,
+		version: config.version
+	});
 }});

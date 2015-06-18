@@ -1,24 +1,13 @@
 var should = require('chai').should();
-var request = require('request');
-var url = 'http://localhost:' + process.env.port
+var get = require('./helper-get');
 
-describe('The Http Server', function () {
-	describe('when GET /info is called', function () {
-		var getInfo = {
-			method: 'GET',
-			url: url + '/info',
-			json: true
-		}
-
-		it('returns information about the running instance', function (done) {
-			request(getInfo, function (err, response, body) {
-				should.not.exist(err)
-				response.statusCode.should.equal(200)
-				should.exist(body)
-				body.should.have.property('version')
-
-				done()
-			})
+describe('Server:', function () {
+	
+	it('GET /info - returns info about the running server instance', function () {
+		get('/info', function (response, body) {
+			response.statusCode.should.equal(200)
+			body.should.have.property('name').equals('hackday-node-server')
+			body.should.have.property('version')
 		})
 	})
 })
