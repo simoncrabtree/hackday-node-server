@@ -1,0 +1,22 @@
+{
+  "name": "hackday-node-server",
+  "version": "1.0.0",
+  "description": "Hapi.js http server for hackday",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simoncrabtree/hackday-node-server.git"
+  },
+  "author": "Simon Crabtree",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simoncrabtree/hackday-node-server/issues"
+  },
+  "homepage": "https://github.com/simoncrabtree/hackday-node-server",
+  "dependencies": {
+    "hapi": "^8.6.1"
+  }
+}
