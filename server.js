@@ -14,3 +14,10 @@ server.route({method: 'GET', path: '/info', handler: function (request, reply) {
 		version: config.version
 	});
 }});
+
+server.route({method: 'POST', path: '/testpayload', config: {payload: {parse: false}}, handler: function (request, reply) {
+	console.log(request.payload)
+	var postedText = request.payload;
+
+	reply(postedText);
+}});
