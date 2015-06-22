@@ -16,3 +16,9 @@ describe 'Server:', ->
       response.statusCode.should.equal(200)
       response.body.should.equal("This is a test")
       done()
+
+  it 'POST /reverse - returns a reversed version of the body text', (done) ->
+    post '/reverse', "Hello", (response, body) ->
+      response.statusCode.should.equal(200)
+      response.body.should.equal('olleH')
+      done()

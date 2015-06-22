@@ -21,3 +21,9 @@ server.route({method: 'POST', path: '/testpayload', config: {payload: {parse: fa
 
 	reply(postedText);
 }});
+
+server.route({method: 'POST', path: '/reverse', config: {payload: {parse: false}}, handler: function (request, reply) {
+	console.log(request.payload.toString())
+	var reversed = request.payload.toString().split('').reverse().join('');
+	reply(reversed);
+}});
