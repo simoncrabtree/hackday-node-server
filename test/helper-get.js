@@ -1,4 +1,5 @@
 var request = require('request')
+require('request-debug')(request)
 
 module.exports = function (path, callback) {
 	request({
