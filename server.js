@@ -16,14 +16,12 @@ server.route({method: 'GET', path: '/info', handler: function (request, reply) {
 }});
 
 server.route({method: 'POST', path: '/testpayload', config: {payload: {parse: false}}, handler: function (request, reply) {
-	console.log(request.payload.toString())
 	var postedText = request.payload;
 
 	reply(postedText);
 }});
 
 server.route({method: 'POST', path: '/reverse', config: {payload: {parse: false}}, handler: function (request, reply) {
-	console.log(request.payload.toString())
 	var reversed = request.payload.toString().split('').reverse().join('');
 	reply(reversed);
 }});
