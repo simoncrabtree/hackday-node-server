@@ -22,3 +22,11 @@ describe 'Server:', ->
       response.statusCode.should.equal(200)
       response.body.should.equal('olleH')
       done()
+
+  it 'POST /uppercase - returns an uppercase version of the body text', (done) ->
+    post '/uppercase', "Hello", (response, body) ->
+      response.statusCode.should.equal(200)
+      response.body.should.equal('HELLO')
+      done()
+
+

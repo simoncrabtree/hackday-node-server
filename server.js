@@ -25,3 +25,8 @@ server.route({method: 'POST', path: '/reverse', config: {payload: {parse: false}
 	var reversed = request.payload.toString().split('').reverse().join('');
 	reply(reversed);
 }});
+
+server.route({method: 'POST', path: '/uppercase', config: {payload: {parse: false}}, handler: function (request, reply) {
+	var reversed = request.payload.toString().toUpperCase();
+	reply(reversed);
+}});
