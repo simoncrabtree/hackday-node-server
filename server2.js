@@ -7,7 +7,7 @@ var opponentName =""
 var pointsToWin =0
 var maxRounds =0
 var min=1;
-var max=3;
+var max=4;
 var no = 2;
 
 var gameNo = 1;
@@ -31,7 +31,7 @@ var server = http.createServer(function (req, res) {
 	} else if (path === "/move") {
 		if(req.method === "GET"){
 
-	// var no = Math.floor(Math.random() * (max - min)) + min
+	var no = Math.floor(Math.random() * (max - min)) + min
 
 	if (lastResult === "DRAW"){
 		if(ourmove === "DYNAMITE")
@@ -40,9 +40,9 @@ var server = http.createServer(function (req, res) {
 			ourmove = "DYNAMITE"
 	}else{
 		ourmove = replies[no];
-		no++;
-		if(no > max)
-			no = 1;
+		// no++;
+	// 	if(no > max)
+	// 		no = 1;
 	}
 
 	if(ourmove === "DYNAMITE"){
