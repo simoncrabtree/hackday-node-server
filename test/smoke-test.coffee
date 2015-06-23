@@ -29,4 +29,3 @@ describe 'Server:', ->
       response.body.should.equal('HELLO')
       done()
 
-
